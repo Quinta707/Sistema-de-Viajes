@@ -1,0 +1,12 @@
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\bin\Debug\net5.0\SistemaDeViajes.Entities.deps.json
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\bin\Debug\net5.0\SistemaDeViajes.Entities.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\bin\Debug\net5.0\ref\SistemaDeViajes.Entities.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\bin\Debug\net5.0\SistemaDeViajes.Entities.pdb
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\obj\Debug\net5.0\SistemaDeViajes.Entities.csproj.AssemblyReference.cache
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\obj\Debug\net5.0\SistemaDeViajes.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\obj\Debug\net5.0\SistemaDeViajes.Entities.AssemblyInfoInputs.cache
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\obj\Debug\net5.0\SistemaDeViajes.Entities.AssemblyInfo.cs
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\obj\Debug\net5.0\SistemaDeViajes.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\obj\Debug\net5.0\SistemaDeViajes.Entities.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\obj\Debug\net5.0\ref\SistemaDeViajes.Entities.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.Entities\obj\Debug\net5.0\SistemaDeViajes.Entities.pdb

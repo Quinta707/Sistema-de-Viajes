@@ -1,0 +1,85 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "DB_SistemaviajesEntities",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": "Entities",
+   "OutputPath": null,
+   "ProjectRootNamespace": "SistemaDeViajes.Entities",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 2,
+   "Tables": [
+      {
+         "Name": "[Acce].[tbPantallas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbRolesXPantallas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbUsuarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbCargos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbDepartamentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbEstadosCiviles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbMunicipios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Rrhh].[tbEmpleados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Rrhh].[tbTransportista]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Viaj].[tbSucursales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Viaj].[tbSucursalesPorEmpleados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Viaj].[tbViajes]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "DESKTOP-AJ8GUH2\\SQLEXPRESS.DB_SistemaViajes",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

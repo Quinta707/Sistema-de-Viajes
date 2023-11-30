@@ -1,0 +1,17 @@
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\bin\Debug\net5.0\SistemaDeViajes.BusinessLogic.deps.json
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\bin\Debug\net5.0\SistemaDeViajes.BusinessLogic.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\bin\Debug\net5.0\ref\SistemaDeViajes.BusinessLogic.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\bin\Debug\net5.0\SistemaDeViajes.BusinessLogic.pdb
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\bin\Debug\net5.0\SistemaDeViajes.DataAccess.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\bin\Debug\net5.0\SistemaDeViajes.Entities.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\bin\Debug\net5.0\SistemaDeViajes.DataAccess.pdb
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\bin\Debug\net5.0\SistemaDeViajes.Entities.pdb
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\obj\Debug\net5.0\SistemaDeViajes.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\obj\Debug\net5.0\SistemaDeViajes.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\obj\Debug\net5.0\SistemaDeViajes.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\obj\Debug\net5.0\SistemaDeViajes.BusinessLogic.AssemblyInfo.cs
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\obj\Debug\net5.0\SistemaDeViajes.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\obj\Debug\net5.0\SistemaDeViajes.BusinessLogic.csproj.CopyComplete
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\obj\Debug\net5.0\SistemaDeViajes.BusinessLogic.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\obj\Debug\net5.0\ref\SistemaDeViajes.BusinessLogic.dll
+C:\Users\Sarai Quintanilla\source\repos\SistemaDeViajes.BusinessLogic\obj\Debug\net5.0\SistemaDeViajes.BusinessLogic.pdb
