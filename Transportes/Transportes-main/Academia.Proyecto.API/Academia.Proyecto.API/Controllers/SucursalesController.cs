@@ -43,5 +43,12 @@ namespace Academia.Proyecto.API.Controllers
             var respuesta = _sucursalesService.DesactivarSucursales(sucursalesDto);
             return Ok(respuesta);
         }
+
+        [HttpPut("Activar")]
+        public IActionResult Activar(SucursalesDto sucursalesDto)
+        {
+            var respuesta = _sucursalesService.ActivarSucursales(sucursalesDto);
+            return Ok(respuesta);
+        }
     }
 }

@@ -43,5 +43,12 @@ namespace Academia.Proyecto.API.Controllers
             var respuesta = _empleadosService.DesactivarEmpleado(empleadosDto);
             return Ok(respuesta);
         }
+
+        [HttpPut("Activar")]
+        public IActionResult ActivarEmpleado(EmpleadosDto empleadosDto)
+        {
+            var respuesta = _empleadosService.ActivarEmpleado(empleadosDto);
+            return Ok(respuesta);
+        }
     }
 }

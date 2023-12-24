@@ -1,7 +1,6 @@
 ﻿using Academia.Proyecto.API._Common;
 using Academia.Proyecto.API._Features.SucursalesXEmpleados.Dtos;
 using Academia.Proyecto.API._Features.Transportistas.Dtos;
-using Academia.Proyecto.API._Features.Transportistas.Dtos;
 using Academia.Proyecto.API._Features.Usuarios.Dtos;
 using Academia.Proyecto.API.Infrastructure;
 using Academia.Proyecto.API.Infrastructure.TransporteDB.Entities;
@@ -78,11 +77,8 @@ namespace Academia.Proyecto.API._Features.Transportistas
             transportistaMapeado.Telefono = transportistasDto.Telefono;
             transportistaMapeado.Identidad = transportistasDto.Identidad;
             transportistaMapeado.TarifaPorKm = transportistasDto.TarifaPorKm;
-            transportistaMapeado.UsuarioCreacionId = transportistaMapeado.UsuarioCreacionId;
-            transportistaMapeado.FechaCreacion = transportistaMapeado.FechaCreacion;
             transportistaMapeado.UsuarioModificacionId = transportistaMapeado.UsuarioModificacionId;
             transportistaMapeado.FechaModicicacion = transportistaMapeado.FechaModicicacion;
-            transportistaMapeado.Estado = transportistaMapeado.Estado;
 
             _unitOfWork.SaveChanges();
             transportistasDto.TransportistaId = transportistaMapeado.TransportistaId;
@@ -97,6 +93,22 @@ namespace Academia.Proyecto.API._Features.Transportistas
             Transportista? Mapeado = _unitOfWork.Repository<Transportista>().FirstOrDefault(x => x.TransportistaId == transportistasDto.TransportistaId);
 
             Mapeado.Estado = false;
+            Mapeado.UsuarioModificacionId = transportistasDto.UsuarioModificacionId;
+            Mapeado.FechaModicicacion = transportistasDto.FechaModicicacion;
+
+            _unitOfWork.SaveChanges();
+
+            Mapeado.TransportistaId = transportistasDto.TransportistaId;
+
+            return Mensajes.Proceso_Exitoso;
+        }
+
+        public string ActivarTransportista(TransportistasDto transportistasDto)
+        {
+
+            Transportista? Mapeado = _unitOfWork.Repository<Transportista>().FirstOrDefault(x => x.TransportistaId == transportistasDto.TransportistaId);
+
+            Mapeado.Estado = true;
             Mapeado.UsuarioModificacionId = transportistasDto.UsuarioModificacionId;
             Mapeado.FechaModicicacion = transportistasDto.FechaModicicacion;
 

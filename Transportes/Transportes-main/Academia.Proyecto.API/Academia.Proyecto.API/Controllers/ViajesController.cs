@@ -21,5 +21,12 @@ namespace Academia.Proyecto.API.Controllers
             var respuesta = _viajeservice.ListarViajes();
             return Ok(respuesta);
         }
+
+        [HttpGet("ListarPorTransportista")]
+        public IActionResult ListadoPorTransportista(int? TransportistaID)
+        {
+            var respuesta = _viajeservice.ListarViajesPorTransportista(TransportistaID);
+            return Ok(respuesta);
+        }
     }
 }

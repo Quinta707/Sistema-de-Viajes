@@ -27,7 +27,7 @@ namespace Academia.Proyecto.API.Controllers
         [HttpPost("Insertar")]
         public IActionResult Insertar(SucursalesXEmpleadoDto sucursalesXEmpleadoDto)
         {
-            var respuesta = _sucursalesXEmpleadosService.InsertarSucursalesXEmpleados(sucursalesXEmpleadoDto);
+            var respuesta = _sucursalesXEmpleadosService.InsertarSucursalesPorEmpleado(sucursalesXEmpleadoDto);
             return Ok(respuesta);
         }
 
@@ -42,6 +42,20 @@ namespace Academia.Proyecto.API.Controllers
         public IActionResult Desactivar(SucursalesXEmpleadoDto sucursalesXEmpleadoDto)
         {
             var respuesta = _sucursalesXEmpleadosService.DesactivarSucursalesXEmpleado(sucursalesXEmpleadoDto);
+            return Ok(respuesta);
+        }
+
+        [HttpPut("Activar")]
+        public IActionResult Activar(SucursalesXEmpleadoDto sucursalesXEmpleadoDto)
+        {
+            var respuesta = _sucursalesXEmpleadosService.ActivarSucursalesXEmpleado(sucursalesXEmpleadoDto);
+            return Ok(respuesta);
+        }
+
+        [HttpGet("EmpleadoPorSucursalDDL")]
+        public IActionResult DDL(int? SucursalID)
+        {
+            var respuesta = _sucursalesXEmpleadosService.EmpleadosPorSucursalDDL(SucursalID);
             return Ok(respuesta);
         }
     }

@@ -45,17 +45,21 @@ namespace Academia.Proyecto.API._Features.Reportes
                                    CantidadViajes = emp.Count()
                                }).ToList();
             return Respuesta.Success(reporteList, Mensajes.Proceso_Exitoso, Codigos.Success);
-            //return Respuesta<List<ReporteViajes>>.Success(reporteList);
+           
         }
 
-        public Respuesta<List<ReporteTotalViajes>> ReporteViajesTransportistas()
+        public Respuesta<List<ReporteTotalViajes>> ReporteViajesTransportistas(DateTime? FechaInicio, DateTime? FechaFinal, int? TransportistaID)
         {
             var reporte = (from viajes in _unitOfWork.Repository<Viaje>().AsQueryable()
                             join transportista in _unitOfWork.Repository<Transportista>().AsQueryable()
                             on viajes.TransportistaId equals transportista.TransportistaId
+                            where viajes.FechaViaje >= FechaInicio 
+                            && viajes.FechaViaje <= FechaFinal
+                            && viajes.TransportistaId == TransportistaID
                             select new ReporteTotalViajes
                             {
                                 ViajeId = viajes.ViajeId,
+                                FechaViaje = viajes.FechaViaje,
                                 TransportistaId = viajes.TransportistaId,
                                 TransportistaNombre = transportista.Nombre,
                                 TransportistaApellido = transportista.Apellido,

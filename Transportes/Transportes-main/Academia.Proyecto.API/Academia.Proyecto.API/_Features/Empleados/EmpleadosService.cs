@@ -64,11 +64,9 @@ namespace Academia.Proyecto.API._Features.Empleados
             empleadoMapeado.Apellido = empleadosDto.Apellido;
             empleadoMapeado.Telefono = empleadosDto.Telefono;
             empleadoMapeado.Identidad = empleadosDto.Identidad;
-            empleadoMapeado.UsuarioCreacionId = empleadoMapeado.UsuarioCreacionId;
-            empleadoMapeado.FechaCreacion = empleadoMapeado.FechaCreacion;
+            empleadoMapeado.EstadoCivilId = empleadosDto.EstadoCivilId;
             empleadoMapeado.UsuarioModificacionId = empleadoMapeado.UsuarioModificacionId;
             empleadoMapeado.FechaModicicacion = empleadoMapeado.FechaModicicacion;
-            empleadoMapeado.Estado = empleadoMapeado.Estado;
 
             _unitOfWork.SaveChanges();
             empleadosDto.EmpleadoId = empleadoMapeado.EmpleadoId;
@@ -83,6 +81,20 @@ namespace Academia.Proyecto.API._Features.Empleados
             Empleado? empleadoMapeado = _unitOfWork.Repository<Empleado>().FirstOrDefault(x => x.EmpleadoId == empleadosDto.EmpleadoId);
 
             empleadoMapeado.Estado = false;
+            empleadoMapeado.UsuarioModificacionId = empleadosDto.UsuarioModificacionId;
+            empleadoMapeado.FechaModicicacion = empleadosDto.FechaModicicacion;
+
+            _unitOfWork.SaveChanges();
+
+            empleadoMapeado.EmpleadoId = empleadosDto.EmpleadoId;
+
+            return Mensajes.Proceso_Exitoso;
+        }
+
+        public string ActivarEmpleado(EmpleadosDto empleadosDto)
+        {
+            Empleado? empleadoMapeado = _unitOfWork.Repository<Empleado>().FirstOrDefault(x => x.EmpleadoId == empleadosDto.EmpleadoId);
+            empleadoMapeado.Estado = true;
             empleadoMapeado.UsuarioModificacionId = empleadosDto.UsuarioModificacionId;
             empleadoMapeado.FechaModicicacion = empleadosDto.FechaModicicacion;
 

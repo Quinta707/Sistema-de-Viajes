@@ -1,5 +1,4 @@
 ﻿using Academia.Proyecto.API._Common;
-using Academia.Proyecto.API._Features.EstadosCiviles.Dtos;
 using Academia.Proyecto.API._Features.SucursalesXEmpleados.Dtos;
 using Academia.Proyecto.API.Infrastructure;
 using Academia.Proyecto.API.Infrastructure.TransporteDB.Entities;
@@ -45,31 +44,30 @@ namespace Academia.Proyecto.API._Features.SucursalesXEmpleados
             return Respuesta.Success(sucurslesXEmpleadoList, Mensajes.Proceso_Exitoso, Codigos.Success);
         }
 
-        public Respuesta<SucursalesXEmpleadoDto> InsertarSucursalesXEmpleados(SucursalesXEmpleadoDto sucursalesXEmpleadoDto)
+
+        public Respuesta<SucursalesXEmpleadoDto> InsertarSucursalesPorEmpleado(SucursalesXEmpleadoDto sucursalesXEmpleadoDto)
         {
 
-            var sucursalesMapeado = _mapper.Map<SucursalesXempleado>(sucursalesXEmpleadoDto);
+            var Mapeado = _mapper.Map<SucursalesXempleado>(sucursalesXEmpleadoDto);
 
-            _unitOfWork.Repository<SucursalesXempleado>().Add(sucursalesMapeado);
+            _unitOfWork.Repository<SucursalesXempleado>().Add(Mapeado);
             _unitOfWork.SaveChanges();
+
 
             return Respuesta.Success(sucursalesXEmpleadoDto, Mensajes.Proceso_Exitoso, Codigos.Success);
 
         }
 
-
         public string EditarSucursalesXEmpleados(SucursalesXEmpleadoDto sucursalesXEmpleadoDto)
         {
 
-            SucursalesXempleado? sucursalesXempleadoMapeado = _unitOfWork.Repository<SucursalesXempleado>().FirstOrDefault(x => x.SucursalId == sucursalesXEmpleadoDto.SucursalId);
-            sucursalesXempleadoMapeado.SucursalXempleadoId = sucursalesXEmpleadoDto.SucursalXempleadoId;
+            SucursalesXempleado? sucursalesXempleadoMapeado = _unitOfWork.Repository<SucursalesXempleado>().FirstOrDefault(x => x.SucursalXempleadoId == sucursalesXEmpleadoDto.SucursalXempleadoId);
+         
             sucursalesXempleadoMapeado.EmpleadoId = sucursalesXEmpleadoDto.EmpleadoId;
             sucursalesXempleadoMapeado.SucursalId = sucursalesXEmpleadoDto.SucursalId;
-            sucursalesXempleadoMapeado.UsuarioCreacionId = sucursalesXEmpleadoDto.UsuarioCreacionId;
-            sucursalesXempleadoMapeado.FechaCreacion = sucursalesXEmpleadoDto.FechaCreacion;
+            sucursalesXempleadoMapeado.Kilometros = sucursalesXEmpleadoDto.Kilometros;
             sucursalesXempleadoMapeado.UsuarioModificacionId = sucursalesXEmpleadoDto.UsuarioModificacionId;
             sucursalesXempleadoMapeado.FechaModicicacion = sucursalesXEmpleadoDto.FechaModicicacion;
-            sucursalesXEmpleadoDto.Estado = sucursalesXEmpleadoDto.Estado;
 
             _unitOfWork.SaveChanges();
             sucursalesXempleadoMapeado.SucursalXempleadoId = sucursalesXEmpleadoDto.SucursalXempleadoId;
@@ -92,5 +90,48 @@ namespace Academia.Proyecto.API._Features.SucursalesXEmpleados
 
             return Mensajes.Proceso_Exitoso;
         }
+
+        public string ActivarSucursalesXEmpleado(SucursalesXEmpleadoDto sucursalesXempleado)
+        {
+
+            SucursalesXempleado? Mapeado = _unitOfWork.Repository<SucursalesXempleado>().FirstOrDefault(x => x.SucursalXempleadoId == sucursalesXempleado.SucursalXempleadoId);
+
+            Mapeado.Estado = true;
+            Mapeado.UsuarioModificacionId = sucursalesXempleado.UsuarioModificacionId;
+            Mapeado.FechaModicicacion = sucursalesXempleado.FechaModicicacion;
+
+            _unitOfWork.SaveChanges();
+
+            Mapeado.SucursalXempleadoId = sucursalesXempleado.SucursalXempleadoId;
+
+            return Mensajes.Proceso_Exitoso;
+        }
+
+        public Respuesta<List<SucursalesXEmpleadoDto>> EmpleadosPorSucursalDDL(int? SucursalID)
+        {
+            var sucurslesXEmpleadoList = (from sucursalempleado in _unitOfWork.Repository<SucursalesXempleado>().AsQueryable()
+                                          join empleado in _unitOfWork.Repository<Empleado>().AsQueryable()
+                                          on sucursalempleado.EmpleadoId equals empleado.EmpleadoId
+                                          join sucursal in _unitOfWork.Repository<Sucursale>().AsQueryable()
+                                          on sucursalempleado.SucursalId equals sucursal.SucursalId
+                                          where sucursalempleado.Estado == true && sucursal.SucursalId == SucursalID
+                                          select new SucursalesXEmpleadoDto
+                                          {
+                                              SucursalXempleadoId = sucursalempleado.SucursalXempleadoId,
+                                              SucursalId = sucursalempleado.SucursalId,
+                                              EmpleadoId = empleado.EmpleadoId,
+                                              EmpleadoNombre = empleado.Nombre + ' ' + empleado.Apellido,
+
+                                          }).ToList();
+
+            if (sucurslesXEmpleadoList.LongCount() > 0)
+            {
+                return Respuesta.Success(sucurslesXEmpleadoList, Mensajes.Proceso_Exitoso, Codigos.Success);
+            }
+            else
+            {
+                return Respuesta.Fault(Mensajes.No_Hay_Registros, Codigos.Info, sucurslesXEmpleadoList);
+            }
+}
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Academia.Proyecto.API.Infrastructure.TransporteDB.Entities;
 using Farsiman.Domain.Core.Standard.Common;
-using IdentityModel;
 using Microsoft.EntityFrameworkCore;
 
 namespace Academia.Proyecto.API.Infrastructure.TransporteDB.Maps.Empleados

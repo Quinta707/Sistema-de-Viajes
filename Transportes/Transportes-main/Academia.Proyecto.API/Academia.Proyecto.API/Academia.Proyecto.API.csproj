@@ -10,11 +10,6 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="Farsiman.Application.Core.Standard" Version="3.0.1" />
-    <PackageReference Include="Farsiman.AuthServer.Extensions" Version="1.0.35371" />
-    <PackageReference Include="Farsiman.Domain.Core.Validations.Standard" Version="1.0.0" />
-    <PackageReference Include="Farsiman.Extensions.Configuration" Version="2.29723.0" />
-    <PackageReference Include="Farsiman.Infraestructure.Core.Entity.Standard" Version="8.0.60115" />
     <PackageReference Include="FluentValidation" Version="11.9.0" />
     <PackageReference Include="Humanizer" Version="2.14.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
@@ -33,6 +28,27 @@
     <Folder Include="_Common\Dtos\" />
     <Folder Include="_Common\Entities\" />
     <Folder Include="_Features\InicioSesion\Dtos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Farsiman.Application.Core.Standard">
+      <HintPath>..\..\..\..\..\Transportes\Academia.Proyecto.API\Academia.Proyecto.API\bin\Debug\net8.0\Farsiman.Application.Core.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.AuthServer.Extensions">
+      <HintPath>..\..\..\..\..\Transportes\Academia.Proyecto.API\Academia.Proyecto.API\bin\Debug\net8.0\Farsiman.AuthServer.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.Domain.Core.Standard">
+      <HintPath>..\..\..\..\..\Transportes\Academia.Proyecto.API\Academia.Proyecto.API\bin\Debug\net8.0\Farsiman.Domain.Core.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.Domain.Core.Validations.Standard">
+      <HintPath>..\..\..\..\..\Transportes\Academia.Proyecto.API\Academia.Proyecto.API\bin\Debug\net8.0\Farsiman.Domain.Core.Validations.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.Extensions.Configuration">
+      <HintPath>..\..\..\..\..\Transportes\Academia.Proyecto.API\Academia.Proyecto.API\bin\Debug\net8.0\Farsiman.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Farsiman.Infraestructure.Core.Entity.Standard">
+      <HintPath>..\..\..\..\..\Transportes\Academia.Proyecto.API\Academia.Proyecto.API\bin\Debug\net8.0\Farsiman.Infraestructure.Core.Entity.Standard.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

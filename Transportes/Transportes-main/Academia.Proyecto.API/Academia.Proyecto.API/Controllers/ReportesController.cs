@@ -15,7 +15,7 @@ namespace Academia.Proyecto.API.Controllers
             _reportesService = reportesService;
         }
 
-        [HttpGet("ReporteViajesEmpleados")]
+        [HttpGet("ReporteViajesPorEmpleados")]
         public IActionResult ReporteEmpleados()
         {
             var respuesta = _reportesService.ReporteViajesEmpleados();
@@ -23,9 +23,9 @@ namespace Academia.Proyecto.API.Controllers
         }
 
         [HttpGet("ReporteViajesTransportistas")]
-        public IActionResult ReporteTransportistas()
+        public IActionResult ReporteTransportistas(DateTime? FechaInicio, DateTime? FechaFin, int? TransportistaID)
         {
-            var respuesta = _reportesService.ReporteViajesTransportistas();
+            var respuesta = _reportesService.ReporteViajesTransportistas(FechaInicio, FechaFin, TransportistaID);
             return Ok(respuesta);
         }
     }

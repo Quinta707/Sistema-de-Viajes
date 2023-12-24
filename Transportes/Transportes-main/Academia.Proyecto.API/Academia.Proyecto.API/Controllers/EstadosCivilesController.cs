@@ -43,5 +43,12 @@ namespace Academia.Proyecto.API.Controllers
             var respuesta = _estadosCivilesService.DesactivarEstadoCivil(estadosCivilesDto);
             return Ok(respuesta);
         }
+
+        [HttpPut("Activar")]
+        public IActionResult Activar(EstadosCivilesDto estadosCivilesDto)
+        {
+            var respuesta = _estadosCivilesService.ActivarEstadoCivil(estadosCivilesDto);
+            return Ok(respuesta);
+        }
     }
 }

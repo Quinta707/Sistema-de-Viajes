@@ -49,5 +49,13 @@ namespace Academia.Proyecto.API.Controllers
             return Ok(respuesta);
         }
 
+        [HttpPut("Activar")]
+        public IActionResult Activar(TransportistasDto transportista)
+        {
+            var respuesta = _transportistasService.ActivarTransportista(transportista);
+
+            return Ok(respuesta);
+        }
+
     }
 }

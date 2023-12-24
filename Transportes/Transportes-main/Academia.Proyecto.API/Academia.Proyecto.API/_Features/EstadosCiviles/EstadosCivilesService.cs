@@ -62,11 +62,8 @@ namespace Academia.Proyecto.API._Features.EstadosCiviles
 
             estadoMapeado.EstadoCivilId = estadosCivilesDto.EstadoCivilId;
             estadoMapeado.Descripcion = estadosCivilesDto.Descripcion;
-            estadoMapeado.UsuarioCreacionId = estadosCivilesDto.UsuarioCreacionId;
-            estadoMapeado.FechaCreacion = estadosCivilesDto.FechaCreacion;
             estadoMapeado.UsuarioModificacionId = estadosCivilesDto.UsuarioModificacionId;
             estadoMapeado.FechaModicicacion = estadosCivilesDto.FechaModicicacion;
-            estadoMapeado.Estado = estadosCivilesDto.Estado;
 
             _unitOfWork.SaveChanges();
             estadosCivilesDto.EstadoCivilId = estadoMapeado.EstadoCivilId;
@@ -80,6 +77,21 @@ namespace Academia.Proyecto.API._Features.EstadosCiviles
             EstadosCivile? estadoMapeado = _unitOfWork.Repository<EstadosCivile>().FirstOrDefault(x => x.EstadoCivilId == estadosCivilesDto.EstadoCivilId);
 
             estadoMapeado.Estado = false;
+            estadoMapeado.UsuarioModificacionId = estadosCivilesDto.UsuarioModificacionId;
+            estadoMapeado.FechaModicicacion = estadosCivilesDto.FechaModicicacion;
+
+            _unitOfWork.SaveChanges();
+
+            estadoMapeado.EstadoCivilId = estadosCivilesDto.EstadoCivilId;
+
+            return Mensajes.Proceso_Exitoso;
+        }
+
+        public string ActivarEstadoCivil(EstadosCivilesDto estadosCivilesDto)
+        {
+            EstadosCivile? estadoMapeado = _unitOfWork.Repository<EstadosCivile>().FirstOrDefault(x => x.EstadoCivilId == estadosCivilesDto.EstadoCivilId);
+
+            estadoMapeado.Estado = true;
             estadoMapeado.UsuarioModificacionId = estadosCivilesDto.UsuarioModificacionId;
             estadoMapeado.FechaModicicacion = estadosCivilesDto.FechaModicicacion;
 

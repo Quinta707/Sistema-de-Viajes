@@ -23,11 +23,39 @@ namespace Academia.Proyecto.API.Controllers
             return Ok(respuesta);
         }
 
-        //[HttpPost("Insertar")]
-        //public IActionResult Insert(ViajesDetallesDto viajesDetallesDto)
-        //{
-        //    var respuesta = _viajesDetallesService.InsertarViajesDetalles(viajesDetallesDto);
-        //    return Ok(respuesta);
-        //}
+        [HttpGet("DetallesPorViaje")]
+        public IActionResult ViajePorDetalle(int? ViajeID)
+        {
+            var respuesta = _viajesDetallesService.ListarPorViaje(ViajeID);
+            return Ok(respuesta);
+        }
+
+        [HttpPost("Insertar")]
+        public IActionResult Insert(ViajesDetallesDto viajesDetallesDto)
+        {
+            var respuesta = _viajesDetallesService.InsertarViajesDetalles(viajesDetallesDto);
+            return Ok(respuesta);
+        }
+
+        [HttpPut("Editar")]
+        public IActionResult Editar(ViajesDetallesDto viajesDetallesDto)
+        {
+            var respuesta = _viajesDetallesService.EditarViajesDetalles(viajesDetallesDto);
+            return Ok(respuesta);
+        }
+
+        [HttpPut("Desactivar")]
+        public IActionResult Desactivar(ViajesDetallesDto viajesDetallesDto)
+        {
+            var respuesta = _viajesDetallesService.Desactivar(viajesDetallesDto);
+            return Ok(respuesta);
+        }
+
+        [HttpPut("Activar")]
+        public IActionResult Activar(ViajesDetallesDto viajesDetallesDto)
+        {
+            var respuesta = _viajesDetallesService.Activar(viajesDetallesDto);
+            return Ok(respuesta);
+        }
     }
 }

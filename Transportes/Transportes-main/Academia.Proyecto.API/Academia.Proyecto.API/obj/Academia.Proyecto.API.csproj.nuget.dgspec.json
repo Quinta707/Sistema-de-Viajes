@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\squintanilla\\Desktop\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\Academia.Proyecto.API.csproj": {}
+    "C:\\Users\\Sarai Quintanilla\\Documents\\GitHub\\Sistema-de-Viajes\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\Academia.Proyecto.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\squintanilla\\Desktop\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\Academia.Proyecto.API.csproj": {
+    "C:\\Users\\Sarai Quintanilla\\Documents\\GitHub\\Sistema-de-Viajes\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\Academia.Proyecto.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\squintanilla\\Desktop\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\Academia.Proyecto.API.csproj",
+        "projectUniqueName": "C:\\Users\\Sarai Quintanilla\\Documents\\GitHub\\Sistema-de-Viajes\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\Academia.Proyecto.API.csproj",
         "projectName": "Academia.Proyecto.API",
-        "projectPath": "C:\\Users\\squintanilla\\Desktop\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\Academia.Proyecto.API.csproj",
-        "packagesPath": "C:\\Users\\squintanilla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\squintanilla\\Desktop\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\obj\\",
+        "projectPath": "C:\\Users\\Sarai Quintanilla\\Documents\\GitHub\\Sistema-de-Viajes\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\Academia.Proyecto.API.csproj",
+        "packagesPath": "C:\\Users\\Sarai Quintanilla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sarai Quintanilla\\Documents\\GitHub\\Sistema-de-Viajes\\Transportes\\Transportes-main\\Academia.Proyecto.API\\Academia.Proyecto.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\squintanilla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sarai Quintanilla\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,26 +48,6 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
-            },
-            "Farsiman.Application.Core.Standard": {
-              "target": "Package",
-              "version": "[3.0.1, )"
-            },
-            "Farsiman.AuthServer.Extensions": {
-              "target": "Package",
-              "version": "[1.0.35371, )"
-            },
-            "Farsiman.Domain.Core.Validations.Standard": {
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
-            "Farsiman.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[2.29723.0, )"
-            },
-            "Farsiman.Infraestructure.Core.Entity.Standard": {
-              "target": "Package",
-              "version": "[8.0.60115, )"
             },
             "FluentValidation": {
               "target": "Package",

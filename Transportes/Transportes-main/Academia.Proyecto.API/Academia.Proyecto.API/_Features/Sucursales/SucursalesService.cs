@@ -1,7 +1,6 @@
 ﻿using Academia.Proyecto.API._Common;
 using Academia.Proyecto.API._Features.EstadosCiviles.Dtos;
 using Academia.Proyecto.API._Features.Sucursales.Dtos;
-using Academia.Proyecto.API._Features.Sucursales.Dtos;
 using Academia.Proyecto.API.Infrastructure;
 using Academia.Proyecto.API.Infrastructure.TransporteDB.Entities;
 using AutoMapper;
@@ -57,13 +56,9 @@ namespace Academia.Proyecto.API._Features.Sucursales
 
             Sucursale? sucursalesmap = _unitOfWork.Repository<Sucursale>().FirstOrDefault(x => x.SucursalId == sucursalesDto.SucursalId);
 
-            sucursalesmap.SucursalId = sucursalesDto.SucursalId;
             sucursalesmap.Nombre = sucursalesDto.Nombre;
-            sucursalesmap.UsuarioCreacionId = sucursalesDto.UsuarioCreacionId;
-            sucursalesmap.FechaCreacion = sucursalesDto.FechaCreacion;
             sucursalesmap.UsuarioModificacionId = sucursalesDto.UsuarioModificacionId;
             sucursalesmap.FechaModicicacion = sucursalesDto.FechaModicicacion;
-            sucursalesmap.Estado = sucursalesDto.Estado;
 
             _unitOfWork.SaveChanges();
             sucursalesDto.SucursalId = sucursalesmap.SucursalId;
@@ -83,6 +78,19 @@ namespace Academia.Proyecto.API._Features.Sucursales
             _unitOfWork.SaveChanges();
 
             sucursalMapeado.SucursalId = sucursalesDto.SucursalId;
+
+            return Mensajes.Proceso_Exitoso;
+        }
+
+        public string ActivarSucursales(SucursalesDto sucursalesDto)
+        {
+            Sucursale? sucursalMapeado = _unitOfWork.Repository<Sucursale>().FirstOrDefault(x => x.SucursalId == sucursalesDto.SucursalId);
+
+            sucursalMapeado.Estado = true;
+            sucursalMapeado.UsuarioModificacionId = sucursalesDto.UsuarioModificacionId;
+            sucursalMapeado.FechaModicicacion = sucursalesDto.FechaModicicacion;
+
+            _unitOfWork.SaveChanges();
 
             return Mensajes.Proceso_Exitoso;
         }
